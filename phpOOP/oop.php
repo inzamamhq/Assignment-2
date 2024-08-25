@@ -34,9 +34,6 @@ public function borrowBook() {
         return false;
     }
 }
-public function returnBook() {
-    $this->availableCopies++;
-}
 }
 class Member {
 
@@ -67,7 +64,7 @@ public function borrowBook(Book $book) {
 
 // TODO: Add returnBook method
 public function returnBook(Book $book) {
-    $book->returnBook();
+    $book->availableCopies++;
     echo "{$this->name} returned {$book->getTitle()}\n";
 }
 }
